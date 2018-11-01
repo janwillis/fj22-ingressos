@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Sessao {
@@ -79,5 +81,9 @@ public class Sessao {
 
 	public LocalTime getHorarioTermino() {
 		return this.horario.plusMinutes(filme.getDuracao().toMinutes());
+	}
+	public Map<String, List<Lugar>> getMapaDeLugares(){
+
+		return sala.getMapaDeLugares();
 	}
 }
